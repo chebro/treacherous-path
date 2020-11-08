@@ -24,6 +24,18 @@ void Insert(Node*& head, int data, int n){
     (*pos).next = insrt;
 }
 
+void Delete(Node*& head, int n) {
+    Node* del = head;
+    for(int i = 1; i < n; i++) {
+        del = (*del).next;
+    }
+    Node** temp = &head;
+    while((*temp) != del) {
+        temp = &(*temp)->next;   
+    }
+    *temp = (*del).next;
+}
+
 void Print(Node*& head){
     Node* temp = head;
     cout<<"List: ";
@@ -39,8 +51,14 @@ int main() {
     head = NULL;
     Insert(head, 2, 1);
     Print(head);
-    Insert(head, 3, 1);
+    Insert(head, 3, 2);
     Print(head);
-    Insert(head, 5, 1);
+    Insert(head, 5, 3);
+    Print(head);
+    Delete(head, 1);
+    Print(head);
+    Delete(head, 1);
+    Print(head);
+    Delete(head, 1);
     Print(head);
 }
