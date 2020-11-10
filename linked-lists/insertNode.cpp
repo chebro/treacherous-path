@@ -24,12 +24,11 @@ void Insert(Node*& head, int data, int n){
     (*pos).next = insrt;
 }
 
-void Print(Node*& head){
-    Node* temp = head;
+void Print(Node* head){
     cout<<"List: ";
-    while(temp != NULL){
-        cout<<(*temp).data;
-        temp = (*temp).next;
+    while(head != NULL){
+        cout<<(*head).data;
+        head = (*head).next;
     }
     cout<<"\n";
 }

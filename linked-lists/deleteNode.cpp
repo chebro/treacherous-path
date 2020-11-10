@@ -29,19 +29,19 @@ void Delete(Node*& head, int n) {
     for(int i = 1; i < n; i++) {
         del = (*del).next;
     }
-    Node** temp = &head;
-    while((*temp) != del) {
-        temp = &(*temp)->next;   
+    Node** track = &head;
+    while((*track) != del) {
+        track = &(*track)->next;   
     }
-    *temp = (*del).next;
+    *track = (*del).next;
 }
 
-void Print(Node*& head){
+void Print(Node* head){
     Node* temp = head;
     cout<<"List: ";
-    while(temp != NULL){
-        cout<<(*temp).data;
-        temp = (*temp).next;
+    while(head != NULL){
+        cout<<(*head).data;
+        head = (*head).next;
     }
     cout<<"\n";
 }
