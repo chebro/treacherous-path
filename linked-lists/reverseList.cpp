@@ -22,18 +22,17 @@ void Print(Node* head) {
     cout<<"\n";
 }
 
-void Reverse(Node* head) {
-    Node* temp = head;
-    Node* temp2;
-    int i = 0;
-    while(temp != NULL) {
-        temp2 = (*temp).next;
-        (*temp).next = temp;
-        cout<<(*head).data<<(*temp).data<<(*temp2).data;
-        temp = temp2;
-        cout<<"\n";
+void Reverse(Node*& head) {
+    Node* curr;
+    Node* prev = NULL;
+    Node* walk = head;
+    while(walk != NULL) {
+        curr = walk;
+        walk = (*walk).next;
+        (*curr).next = prev;
+        prev = curr;
     }
-    head = temp;
+    head = curr;
 }
 
 int main() {
