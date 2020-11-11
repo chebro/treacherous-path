@@ -23,7 +23,7 @@ void Print(Node* head) {
 }
 
 void Reverse(Node*& head) {
-    Node* curr;
+    Node* curr = head;
     Node* prev = NULL;
     Node* walk = head;
     while(walk != NULL) {
@@ -37,9 +37,7 @@ void Reverse(Node*& head) {
 
 int main() {
     Node* head = NULL;
-    Insert(head, 1);
-    Insert(head, 2);
-    Insert(head, 3);
+
     Print(head);
     Reverse(head);
     Print(head);
